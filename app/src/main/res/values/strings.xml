@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Control CFE</string>
+    <string name="app_name_1">control</string>
+    <string name="app_name_2">CFE</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="launcher_text">App oficial de CFE para\nseguimiento de reportes</string>
+    <string name="how_it_works">Ver como funciona</string>
+    <string name="skip">Saltar</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="logging_in">Iniciando sesión</string>
+    <string name="no_connection">Favor de revisar su conexion a internet</string>
+    <string name="server_error">Hubo un problema con el servidor</string>
+    <string name="invalid_parameters">Parámetros inválidos</string>
+    <string name="authentication_failed">El usuario o contraseña no son correctos</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="title_activity_reports">Mis reportes asignados</string>
+    <string name="title_activity_launcher">LauncherActivity</string>
+    <string name="action_map">Ver mapa</string>
+    <string name="title_activity_report_detailed">Detalles del reporte</string>
+    <string name="header_creation_date">Fecha de creación</string>
+    <string name="header_location">Ubicación</string>
+    <string name="header_comment">Descripción</string>
+    <string name="header_comments">Comentarios</string>
+    <string name="public_comments">Comentarios públicos: </string>
+    <string name="private_comments">Comentarios privados: </string>
+    <string name="report_number">Reporte #</string>
+    <string name="status">Status:</string>
+    <string name="header_status">Status</string>
+    <string name="btn_update_status">Actualizar status</string>
+
+    <string-array name="months_array">
+        <item>Ene</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Abr</item>
+        <item>May</item>
+        <item>Jun</item>
+        <item>Jul</item>
+        <item>Ago</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dic</item>
+    </string-array>
+    <string-array name="months_full_array">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </string-array>
+    <string-array name="status_array">
+        <item>Recibido</item>
+        <item>En proceso</item>
+        <item>Resuelto</item>
+        <item>Cerrado</item>
+    </string-array>
+    <string-array name="subtype_fail_array">
+        <item>No hay luz en la casa</item>
+        <item>No hay luz en la cuadra</item>
+        <item>Variacion de voltaje casa</item>
+        <item>Variacion voltaje cuadra</item>
+        <item>CFEmatico no funciona</item>
+    </string-array>
+    <string-array name="subtype_issue_array">
+        <item>Alto consumo recibo</item>
+        <item>Mala atencion al cliente</item>
+        <item>Extorsión o corrupción</item>
+    </string-array>
+
+    <string name="title_activity_report_comments">ReportCommentsActivity</string>
+    <string name="hint_write_comment">Escribe un comentario</string>
+    <string name="header_public_comments">Comentarios públicos</string>
+    <string name="header_private_comments">Comentarios privados</string>
+    <string name="sending_private_comment">Enviando comentario privado</string>
+    <string name="sending_public_comment">Enviando comentario público</string>
+    <string name="status_instructions">¿Desea cambiar el estado del reporte?</string>
+    <string name="options_cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="updating_status">Actualizando status</string>
+    <string name="no_assigned_reports">No tienes reportes asignados.</string>
+
+</resources>

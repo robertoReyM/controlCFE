@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="login_filter">#33000000</color>
+    <color name="cfe_green">#ff0aa15d</color>
+    <color name="cfe_green_pressed">#990aa15d</color>
+    <color name="cfe_green_bg">#330aa15d</color>
+    <color name="cfe_disabled">#807C7B7C</color>
+    <color name="card_pressed">#ebebeb</color>
+    <color name="card_activated">#500099CC</color>
+    <color name="background_gray">#ebebeb</color>
+    <color name="title_gray">#ff555555</color>
+</resources>

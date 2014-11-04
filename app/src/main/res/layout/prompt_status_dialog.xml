@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/header_status"
+        android:id="@+id/txt_header_status"
+        android:textColor="@android:color/white"
+        android:background="@color/cfe_green"
+        android:padding="15dp" />
+    <com.smartplace.cfeofficer.coverflow.FancyCoverFlow
+        android:id="@+id/fancyCoverFlow"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txt_status_type"
+        android:padding="20dp"
+        android:gravity="center" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/status_instructions"
+        android:id="@+id/txt_status_instructions"
+        android:padding="20dp"
+        android:gravity="center" />
+</LinearLayout>

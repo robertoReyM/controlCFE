@@ -1,0 +1,304 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context="com.smartplace.cfeofficer.reports.ReportDetailedActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Medium Text"
+            android:id="@+id/txt_report_id"
+            android:textColor="@color/cfe_green"
+            android:layout_gravity="center"
+            android:layout_margin="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/header_creation_date"
+            android:id="@+id/txt_header_creation_date"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/card_inner_frame">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:padding="10dp"
+                        android:id="@+id/txt_creation_date" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_gravity="right"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:id="@+id/txt_creation_hour" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/header_location"
+            android:id="@+id/txt_header_location"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/card_inner_frame">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_default_map"
+                        android:id="@+id/image_location" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/header_comment"
+            android:id="@+id/txt_header_comment"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/card_inner_frame">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:id="@+id/image_type"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:id="@+id/txt_type"
+                        android:padding="10dp"
+                        android:layout_gravity="center_horizontal" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:padding="10dp"
+                        android:id="@+id/txt_comment" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/header_comments"
+            android:id="@+id/txt_header_comments"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/card_inner_frame">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Medium Text"
+                        android:padding="10dp"
+                        android:id="@+id/txt_public_comments"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerInside"
+                        android:id="@+id/img_btn_public_comments"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_btn_next" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Medium Text"
+                            android:padding="10dp"
+                            android:id="@+id/txt_private_comments"
+                            android:layout_weight="1"/>
+
+                        <ImageButton
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="centerInside"
+                            android:id="@+id/img_btn_private_comments"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_btn_next" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/header_status"
+            android:id="@+id/txt_header_status"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                style="@style/card_inner_frame">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/image_status" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/txt_status" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_update_status"
+                    android:textColor="@android:color/white"
+                    android:background="@color/cfe_green"
+                    android:id="@+id/btn_update_status" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

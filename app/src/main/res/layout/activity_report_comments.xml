@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context="com.smartplace.cfeofficer.reports.ReportCommentsActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:id="@+id/list_comments"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:listSelector="@drawable/blank_selector"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:background="@color/cfe_green_bg"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/hint_write_comment"
+                android:layout_gravity="center"
+                android:id="@+id/edit_comment"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_btn_next"
+                android:background="@android:color/transparent"
+                android:id="@+id/img_btn_publish"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

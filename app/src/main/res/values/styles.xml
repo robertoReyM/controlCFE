@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="ThemeNoBar" parent="@android:style/Theme.Holo.Light.NoActionBar">
+        <!-- -->
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <!--  Transparent dialog -->
+    <style name="TransparentProgressDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/login_filter</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="card_outer_frame">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+    </style>
+    <style name="card_title_frame">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/card_title_margin_sides</item>
+        <item name="android:layout_toRightOf">@android:id/icon</item>
+    </style>
+
+    <style name="card_inner_frame">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/card_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/card_margin_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/card_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/card_margin_vertical</item>
+        <item name="android:background">@drawable/card_selector</item>
+        <item name="android:paddingTop">@dimen/card_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/card_padding_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="card_inner_frame_inventory">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/card_margin_horizontal_inventory</item>
+        <item name="android:layout_marginRight">@dimen/card_margin_horizontal_inventory</item>
+        <item name="android:layout_marginTop">@dimen/card_margin_vertical_inventory</item>
+        <item name="android:layout_marginBottom">@dimen/card_margin_vertical_inventory</item>
+        <item name="android:background">@drawable/card_selector</item>
+        <item name="android:paddingTop">@dimen/card_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/card_padding_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+</resources>

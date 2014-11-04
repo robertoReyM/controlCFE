@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context="com.smartplace.cfeofficer.reports.ReportsActivity">
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:listSelector="@drawable/blank_selector"
+        android:id="@+id/list_reports" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:id="@+id/layout_reports_empty">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/no_assigned_reports"
+            android:textColor="@color/title_gray"
+            android:id="@+id/textView" />
+    </LinearLayout>
+
+</FrameLayout>

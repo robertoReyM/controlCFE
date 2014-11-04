@@ -170,7 +170,48 @@
             </LinearLayout>
 
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/attachment"
+            android:id="@+id/txt_header_attachment"
+            android:textColor="@color/cfe_green"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/card_outer_frame">
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                style="@style/card_inner_frame">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_default_map"
+                        android:id="@+id/image_attachment" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

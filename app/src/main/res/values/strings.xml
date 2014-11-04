@@ -90,5 +90,8 @@
     <string name="confirm">Confirmar</string>
     <string name="updating_status">Actualizando status</string>
     <string name="no_assigned_reports">No tienes reportes asignados.</string>
+    <string name="title_activity_report_map">Detalles de ubicación</string>
+    <string name="title_activity_reports_mapping">Reportes en mapa</string>
+    <string name="attachment">Evidencia</string>
 
 </resources>

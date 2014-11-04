@@ -11,6 +11,7 @@ public class Constants {
 
     public static final String IMAGES_PATH = Environment.getExternalStorageDirectory().toString() + "/Android/data/com.smartplace.cfeofficer/Images";
     public static final String MAPS_STATIC_IMAGE_PREFIX = "http://maps.googleapis.com/maps/api/staticmap?size=500x300&zoom=14&markers=color:0x089e5f%7C";
+    public static final String ATTACH_IMAGE_PREFIX = "https://s3-us-west-2.amazonaws.com/reportecfe/reportImages/";
     public static final int TYPE_COMMENT_PUBLIC = 1;
     public static final int TYPE_COMMENT_PRIVATE = 2;
 

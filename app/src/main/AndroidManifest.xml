@@ -2,18 +2,92 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.smartplace.cfeofficer" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- library -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- GCM connects to Google Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--
+     Creates a custom permission so only this app can receive its messages.
+
+     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
+           where PACKAGE is the application's package name.
+    -->
+    <permission
+        android:name="com.smartplace.cfeofficer.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.smartplace.cfeofficer.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyC1SaGEZ4vFAlKvTPIKeebdPe4XU1XDhZo" />
+        <meta-data
+            android:name="PW_APPID"
+            android:value="93E84-ECC19" />
+        <meta-data
+            android:name="PW_PROJECT_ID"
+            android:value="A482502542781" />
 
-        <activity android:name="com.arellomobile.android.push.PushWebview"/>
+        <activity
+            android:name="com.smartplace.cfeofficer.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeNoBar" >
+        </activity>
+        <activity
+            android:name="com.smartplace.cfeofficer.reports.ReportsActivity"
+            android:label="@string/title_activity_reports" >
+        </activity>
+        <activity
+            android:name="com.smartplace.cfeofficer.LauncherActivity"
+            android:label="@string/app_name"
+            android:theme="@style/ThemeNoBar" >
+            <intent-filter>
+                <action android:name="com.smartplace.cfeofficer.MESSAGE" />
 
-        <activity android:name="com.arellomobile.android.push.MessageActivity"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name="com.arellomobile.android.push.PushHandlerActivity"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.smartplace.cfeofficer.reports.ReportDetailedActivity"
+            android:label="@string/title_activity_report_detailed" >
+        </activity>
+        <activity
+            android:name="com.smartplace.cfeofficer.reports.ReportCommentsActivity"
+            android:label="@string/title_activity_report_comments" >
+        </activity>
+        <activity android:name="com.arellomobile.android.push.PushWebview" />
+        <activity android:name="com.arellomobile.android.push.MessageActivity" />
+        <activity android:name="com.arellomobile.android.push.PushHandlerActivity" />
 
         <!--
           BroadcastReceiver that will receive intents from GCM
@@ -24,13 +98,15 @@
         -->
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
+
                 <!-- Receives the actual messages. -->
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <!-- Receives the registration id. -->
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
-                <category android:name="com.smartplace.cfeofficer"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.smartplace.cfeofficer" />
             </intent-filter>
         </receiver>
 
@@ -38,80 +114,16 @@
           Application-specific subclass of PushGCMIntentService that will
           handle received messages.
         -->
-        <service android:name="com.arellomobile.android.push.PushGCMIntentService"/>
+        <service android:name="com.arellomobile.android.push.PushGCMIntentService" />
 
-        <meta-data
-            android:name="PW_APPID"
-            android:value="93E84-ECC19" />
-        <meta-data
-            android:name="PW_PROJECT_ID"
-            android:value="A482502542781" />
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/ThemeNoBar" >
+            android:name="com.smartplace.cfeofficer.reports.ReportMapActivity"
+            android:label="@string/title_activity_report_map" >
         </activity>
         <activity
-            android:name=".reports.ReportsActivity"
-            android:label="@string/title_activity_reports" >
-        </activity>
-        <activity
-            android:name=".LauncherActivity"
-            android:label="@string/app_name"
-            android:theme="@style/ThemeNoBar" >
-            <intent-filter>
-            <action android:name="com.smartplace.cfeofficer.MESSAGE"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-        </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reports.ReportDetailedActivity"
-            android:label="@string/title_activity_report_detailed" >
-        </activity>
-        <activity
-            android:name=".reports.ReportCommentsActivity"
-            android:label="@string/title_activity_report_comments" >
+            android:name="com.smartplace.cfeofficer.reports.ReportsMappingActivity"
+            android:label="@string/title_activity_reports_mapping" >
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <!--library-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <!-- GCM connects to Google Services. -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <!-- GCM requires a Google account. -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-
-    <!-- Keeps the processor from sleeping when a message is received. -->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-
-    <!--
-     Creates a custom permission so only this app can receive its messages.
-
-     NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE,
-           where PACKAGE is the application's package name.
-    -->
-    <permission
-        android:name="com.smartplace.cfeofficer.permission.C2D_MESSAGE"
-        android:protectionLevel="signature"/>
-    <uses-permission
-        android:name="com.smartplace.cfeofficer.permission.C2D_MESSAGE"/>
-
-    <!-- This app has permission to register and receive data message. -->
-    <uses-permission
-        android:name="com.google.android.c2dm.permission.RECEIVE"/>
-
 
 </manifest>

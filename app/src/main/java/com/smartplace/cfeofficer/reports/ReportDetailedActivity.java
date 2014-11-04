@@ -59,6 +59,7 @@ public class ReportDetailedActivity extends Activity {
         TextView txtCreationDate = (TextView)findViewById(R.id.txt_creation_date);
         TextView txtCreationHour = (TextView)findViewById(R.id.txt_creation_hour);
         ImageView imageMap = (ImageView)findViewById(R.id.image_location);
+        ImageView imageAttachment = (ImageView)findViewById(R.id.image_attachment);
         TextView txtComment = (TextView)findViewById(R.id.txt_comment);
         TextView txtPublicComments = (TextView)findViewById(R.id.txt_public_comments);
         TextView txtPrivateComments = (TextView)findViewById(R.id.txt_private_comments);
@@ -89,6 +90,7 @@ public class ReportDetailedActivity extends Activity {
         ((TextView)findViewById(R.id.txt_header_comment)).setTypeface(font);
         ((TextView)findViewById(R.id.txt_header_comments)).setTypeface(font);
         ((TextView)findViewById(R.id.txt_header_status)).setTypeface(font);
+        ((TextView)findViewById(R.id.txt_header_attachment)).setTypeface(font);
 
         //set values
         String[]creationDateTime = mReport.getCreationDate().split(" ");
@@ -171,11 +173,50 @@ public class ReportDetailedActivity extends Activity {
                     });
         }
 
+//Check for map in eeprom otherwise download it
+        Dir = new File (Constants.IMAGES_PATH);
+        filename = mReport.getReportID() +"attach.png";
+        file = new File (Dir, filename);
+        if(file.exists()){
+            imageAttachment.setImageBitmap(
+                    BitmapFactory.decodeFile(Constants.IMAGES_PATH + File.separator + filename));
+        }else {
+            String imageAttach = Constants.ATTACH_IMAGE_PREFIX + mReport.getReportID() + ".jpeg";
+            ImageLoader.getInstance().displayImage(imageAttach
+                    , imageAttachment, defaultOptions,
+                    new ImageLoadingListener() {
+                        @Override
+                        public void onLoadingStarted(String s, View view) {
+                        }
+
+                        @Override
+                        public void onLoadingFailed(String s, View view, FailReason failReason) {
+                        }
+
+                        @Override
+                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+                            //member id is the last string on the uri
+                            Miscellaneous.saveImage(bitmap, Constants.IMAGES_PATH, mReport.getReportID() + "attach");
+                        }
+
+                        @Override
+                        public void onLoadingCancelled(String s, View view) {
+                        }
+                    });
+        }
         //set action bar
         getActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.cfe_green)));
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         //set on click listeners
+        imageMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(),ReportMapActivity.class);
+                intent.putExtra("report",new Gson().toJson(mReport));
+                startActivity(intent);
+            }
+        });
         imgBtnPublicComments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
